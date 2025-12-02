@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<body>
+  <input id="t" value="Xin chào bạn">
+  <button onclick="speak()">Phát</button>
+  <audio id="player" controls></audio>
+
+  <script>
+    function speak() {
+      const t = document.getElementById("t").value;
+      const url = "https://tts-google.onrender.com/tts?text=" + encodeURIComponent(t) + "&lang=en";
+      document.getElementById("player").src = url;
+      document.getElementById("player").play();
+    }
+  </script>
+</body>
+</html>
